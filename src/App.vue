@@ -55,9 +55,12 @@
 
 <script>
 import * as Vue from 'vue';
+import { useGtag } from 'vue-gtag-next';
 
 export default {
   setup() {
+    let gtag = useGtag();
+
     let p100 = Vue.ref(2.95);
     let n = Vue.ref(10);
     let isDrawing = Vue.ref(false);
@@ -72,6 +75,7 @@ export default {
     let nAverage = Vue.computed(() => 1 / p.value);
 
     let tryDraw = async () => {
+      gtag.event('tryDrawClicked');
       isDrawing.value = true;
       nTrial.value = 0;
       for (let i = 1; true; i++) {
