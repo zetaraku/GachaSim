@@ -61,7 +61,7 @@ export default {
   setup() {
     let gtag = useGtag();
 
-    let p100 = Vue.ref(2.95);
+    let p100 = Vue.ref(5.00);
     let n = Vue.ref(10);
     let isDrawing = Vue.ref(false);
     let nTrial = Vue.ref(0);
