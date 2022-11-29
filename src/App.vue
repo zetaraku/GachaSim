@@ -17,8 +17,8 @@
           <input type="number" min="0" step="1" v-model.number="n">
         </div>
         <div>
-          <label>連抽確率 (%)</label>
-          <input type="text" :value="(pSumTo(n) * 100).toFixed(2)" disabled>
+          <label>出貨機率 (%) / 暴死機率 (%)</label>
+          <input type="text" :value="`${(pSumTo(n) * 100).toFixed(2)} / ${(100 - pSumTo(n) * 100).toFixed(2)}`" disabled>
         </div>
         <div>
           <label>試抽 (直到抽中)</label>
